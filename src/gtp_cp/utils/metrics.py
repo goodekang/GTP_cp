@@ -47,3 +47,4 @@ def concordance_index(event_time: np.ndarray, risk: np.ndarray, event_observed: 
 
 
 
+
