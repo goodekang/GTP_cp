@@ -24,10 +24,8 @@ venv/
 # Jupyter Notebook
 .ipynb_checkpoints/
 
-# Data files (可根据需要调整)
-# 如果需要提交数据文件，请注释掉下面这些行
-# data/brca/patches/
-# data/brca/features/
+# Data files - 排除所有数据文件
+data/
 
 # Artifacts and model checkpoints
 artifacts/**/*.pt
