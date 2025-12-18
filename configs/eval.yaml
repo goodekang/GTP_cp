@@ -1,0 +1,11 @@
+defaults:
+  - train
+  - _self_
+
+checkpoint_path: null  # if null, will pick latest from output.dir
+split: "test"          # "val" or "test"
+
+
+
+
+

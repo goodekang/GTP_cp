@@ -1,0 +1,42 @@
+defaults:
+  - _self_
+
+seed: 7
+device: "cuda"  # "cuda" or "cpu"
+
+data:
+  n_train: 256
+  n_val: 64
+  n_test: 64
+  batch_size: 16
+  num_workers: 0
+
+graph:
+  n_patch: 16
+  n_cell_per_patch: 8
+  n_gene_per_cell: 32
+  feature_dim: 64
+  patch_radius: 1  # synthetic adjacency
+
+model:
+  hidden_dim: 128
+  num_layers: 3
+  num_heads: 4
+  dropout: 0.1
+  use_causal_mask: true
+  causal_mask_strength: 1.0
+
+train:
+  lr: 3.0e-4
+  weight_decay: 1.0e-3
+  epochs: 20
+  grad_clip: 1.0
+  log_every: 20
+
+output:
+  dir: "artifacts"
+
+
+
+
+

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.Python
+.env
+.venv
+env/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Data files (可根据需要调整)
+# 如果需要提交数据文件，请注释掉下面这些行
+# data/brca/patches/
+# data/brca/features/
+
+# Artifacts and model checkpoints
+artifacts/**/*.pt
+artifacts/**/*.pth
+*.ckpt
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+

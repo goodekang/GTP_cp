@@ -1,0 +1,8 @@
+,0
+best_val_cindex,-1.0
+test_cindex,
+test_loss,0.0
+n_train,37.0
+n_val,8.0
+n_test,5.0
+feature_dim,2048.0

@@ -1,0 +1,40 @@
+name: gtp-cp
+channels:
+  - pytorch
+  - nvidia
+  - pyg
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip>=24
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - tqdm
+  - rich
+  - omegaconf
+  - hydra-core
+  - pytest
+  - ruff
+  - pillow
+  # ============================================================
+  # PyTorch for RTX 5060 (Blackwell Architecture) - CUDA 12.8
+  # ============================================================
+  # RTX 50 系列 (Blackwell) 需要 CUDA 12.8+ 以获得最佳支持
+  # 参考: https://pytorch.org/get-started/locally/
+  #
+  # 注意: conda 环境创建后，需要手动运行以下命令安装 PyTorch:
+  #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+  #
+  # WSI Processing (optional, uncomment if you need to process SVS files)
+  # - openslide
+  # - openslide-python
+  - pip:
+      # PyG (将自动选择正确的 CUDA 版本)
+      - torch-geometric>=2.6
+      - timm>=1.0.0
+      - -e .
+
+

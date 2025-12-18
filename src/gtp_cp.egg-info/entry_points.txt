@@ -1,0 +1,13 @@
+[console_scripts]
+gtp-brca-clinical = gtp_cp.pipelines.brca.clinical:main
+gtp-brca-demo = gtp_cp.pipelines.brca.demo_data:main
+gtp-brca-features = gtp_cp.pipelines.brca.features:main
+gtp-brca-gdc-manifest = gtp_cp.pipelines.brca.gdc_manifest:main
+gtp-brca-graphs = gtp_cp.pipelines.brca.graphs:main
+gtp-brca-manifest = gtp_cp.pipelines.brca.manifest:main
+gtp-brca-preprocess = gtp_cp.pipelines.brca.preprocess:main
+gtp-brca-split = gtp_cp.pipelines.brca.split:main
+gtp-brca-tile = gtp_cp.pipelines.brca.tiling:main
+gtp-brca-train = gtp_cp.pipelines.brca.train:main
+gtp-eval = gtp_cp.cli.eval:main
+gtp-train = gtp_cp.cli.train:main
