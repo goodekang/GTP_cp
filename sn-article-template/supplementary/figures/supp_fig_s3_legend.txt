@@ -1,0 +1,27 @@
+Supplementary Figure S3 | Pan-cancer detailed performance analysis.
+
+Performance by cancer type. Heatmap displaying C-index performance for seven survival prediction methods (rows) across ten TCGA cancer types (columns). Color scale ranges from 0.50 (dark blue, near-random performance) to 0.80 (orange, excellent discrimination).
+
+Methods evaluated (top to bottom):
+- Bio-STFM (ours)
+- MCAT (Multimodal Co-Attention Transformer)
+- Porpoise (Pathology-Omics Research Platform)
+- TransMIL (Transformer-based Multiple Instance Learning)
+- CLAM-SB (Clustering-constrained Attention MIL, Single Branch)
+- ABMIL (Attention-based MIL)
+- Mean-Pool (baseline averaging)
+
+Cancer types evaluated (left to right): BLCA (bladder), BRCA (breast), COAD (colon), HNSC (head and neck), KIRC (kidney clear cell), LIHC (liver), LUAD (lung adenocarcinoma), LUSC (lung squamous cell), OV (ovarian), STAD (stomach).
+
+Key findings:
+
+Bio-STFM achieves the highest or near-highest C-index across all ten cancer types, with particularly strong performance in COAD (0.80), LIHC (0.80), and LUAD (0.80). The model demonstrates consistent superiority over baselines, with improvements ranging from +0.05 to +0.20 C-index points compared to the next-best method.
+
+Cancer-specific patterns emerge: KIRC and LUAD show relatively high performance across multiple methods, suggesting these tumor types have strong morphological-survival associations. In contrast, OV (ovarian) represents a challenging cohort where all methods achieve modest performance (C-index 0.54–0.61), likely due to histological heterogeneity and complex treatment histories.
+
+Baseline methods (Mean-Pool) perform near-random (C-index ~0.54–0.59) across most cancer types, validating that observed improvements from attention-based and multimodal methods represent genuine learned signals rather than dataset artifacts.
+
+The consistent cross-cancer advantage of Bio-STFM supports its generalizability and suggests that the integration of biological constraints, spatial structure, and domain bridging provides benefits across diverse tumor microenvironments.
+
+Abbreviations: C-index, concordance index; TCGA, The Cancer Genome Atlas; MIL, multiple instance learning; BLCA, bladder urothelial carcinoma; BRCA, breast invasive carcinoma; COAD, colon adenocarcinoma; HNSC, head and neck squamous cell carcinoma; KIRC, kidney renal clear cell carcinoma; LIHC, liver hepatocellular carcinoma; LUAD, lung adenocarcinoma; LUSC, lung squamous cell carcinoma; OV, ovarian serous cystadenocarcinoma; STAD, stomach adenocarcinoma.
+

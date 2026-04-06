@@ -1,0 +1,20 @@
+Figure 4 | Mechanistic interpretation of spatial features driving survival prediction.
+
+a, Whole slide image (WSI) attention map. Representative breast cancer slide with overlaid attention weights learned by Bio-STFM. Warmer colors (orange/red) indicate regions receiving higher attention during risk prediction (predicted risk score = 0.725 for this case). Two regions of interest (ROI-1, ROI-2) are highlighted with dashed boxes for detailed analysis. Scale bar, 1 mm. The model allocates attention to prognostically informative regions including tumor-stroma interface and areas with specific immune cell configurations; high attention indicates relevance for prediction, not necessarily high risk per se (see Supplementary Fig. S4c for population-level attention-risk relationship).
+
+b, Perturbation stability analysis. Heatmap showing rank correlation between original and perturbed attention rankings across different perturbation types (Noise, Dropout, Shuffle, Edge removal, Node removal) and levels (1%–50%). High correlations (>0.89) across most conditions demonstrate that the model's interpretations are robust to input perturbations and not artifacts of overfitting. Values indicate Spearman rank correlation coefficients.
+
+c, Cell community structure in a representative high-risk region. Spatial scatter plot showing the distribution of n = 400 cells colored by cell type: Tumor (pink), cancer-associated fibroblasts (CAF, brown), CD8+ T cells (teal), CD4+ T cells (yellow), Macrophages (orange), B cells (blue), Endothelial cells (green), and NK cells (magenta). The dashed red circle highlights a high-risk region characterized by immune exclusion patterns. Coordinates in micrometers (μm).
+
+d, Attention entropy comparison across model variants. Violin plots showing the distribution of attention entropy for the full model (Ours), and ablated versions removing biological constraints (−Mask), spatial structure (−Spatial), or using random attention (Random). Lower entropy indicates more focused, interpretable attention patterns. The full model achieves significantly lower entropy than all ablated variants (***P < 0.001, two-sided Wilcoxon test).
+
+e, Attention entropy across transformer layers. Line plot tracking entropy evolution through layers 1, 3, and 6 of the transformer. The full model (Ours, teal diamonds) maintains consistently lower entropy compared to −Mask (orange), −Spatial (teal circles), and Random (gray) variants, indicating that biological and spatial constraints promote focused attention throughout the network hierarchy.
+
+f, Immune exclusion barrier motif. Discovered spatial motif associated with poor prognosis. The network diagram illustrates CAF cells forming a physical barrier around CD8+ T cells, preventing their infiltration into the tumor core. TGFβ-TGFBR signaling (pink arrow) mediates this barrier effect. Blocking this interaction is predicted to restore immune access. HR = 2.15, P = 0.001, indicating patients with this motif have significantly worse survival.
+
+g, Motif-survival association. Box plots comparing the frequency of immune exclusion motifs between short survival (n = 81) and long survival (n = 119) patient groups. Patients with short survival harbor significantly more immune exclusion motifs (P < 0.0001, ***two-sided Mann-Whitney U test), validating the prognostic relevance of the discovered spatial pattern.
+
+h, Gene-morphology correlation analysis. Heatmap showing Pearson correlation coefficients (r) between marker gene expression and histopathological features. Notable associations include: Pleomorphism correlates with ERBB2 (r = 0.62) and TP53 (r = 0.73); Nuclear Area correlates with TP53 (r = 0.24); Stromal Ratio correlates with VIM (r = 0.31). Asterisks indicate statistical significance (*P < 0.05, Bonferroni-corrected). These associations link molecular alterations to morphological phenotypes observable in routine H&E staining.
+
+Abbreviations: WSI, whole slide image; ROI, region of interest; CAF, cancer-associated fibroblast; NK, natural killer; TGFβ, transforming growth factor beta; TGFBR, TGFβ receptor; HR, hazard ratio; H&E, hematoxylin and eosin.
+

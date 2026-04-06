@@ -28,9 +28,9 @@ dependencies:
   # 注意: conda 环境创建后，需要手动运行以下命令安装 PyTorch:
   #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
   #
-  # WSI Processing (optional, uncomment if you need to process SVS files)
-  # - openslide
-  # - openslide-python
+  # WSI Processing (for Figure 4a real WSI visualization)
+  - openslide
+  - openslide-python
   - pip:
       # PyG (将自动选择正确的 CUDA 版本)
       - torch-geometric>=2.6

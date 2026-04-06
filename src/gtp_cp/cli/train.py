@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from pathlib import Path
 
 import hydra
@@ -21,6 +20,15 @@ def _device(name: str) -> torch.device:
     return torch.device("cpu")
 
 
+def _optional_int(cfg: DictConfig, key: str) -> int | None:
+    if key not in cfg.model:
+        return None
+    v = cfg.model[key]
+    if v is None:
+        return None
+    return int(v)
+
+
 @hydra.main(version_base=None, config_path="../../../configs", config_name="train")
 def main(cfg: DictConfig) -> None:
     print(OmegaConf.to_yaml(cfg))
@@ -33,6 +41,9 @@ def main(cfg: DictConfig) -> None:
         n_gene_per_cell=int(cfg.graph.n_gene_per_cell),
         feature_dim=int(cfg.graph.feature_dim),
         patch_radius=int(cfg.graph.patch_radius),
+        n_motif=int(cfg.graph.get("n_motif", 0)),
+        use_gene_ppi=bool(cfg.graph.get("use_gene_ppi", False)),
+        ppi_edges_per_graph=int(cfg.graph.get("ppi_edges_per_graph", 32)),
     )
 
     train_items = generate_dataset(int(cfg.seed), int(cfg.data.n_train), spec)
@@ -67,6 +78,12 @@ def main(cfg: DictConfig) -> None:
             dropout=float(cfg.model.dropout),
             use_causal_mask=bool(cfg.model.use_causal_mask),
             causal_mask_strength=float(cfg.model.causal_mask_strength),
+            patch_dim=_optional_int(cfg, "patch_dim"),
+            gene_dim=_optional_int(cfg, "gene_dim"),
+            use_dual_stream=bool(cfg.model.get("use_dual_stream", False)),
+            use_mil_pooling=bool(cfg.model.get("use_mil_pooling", True)),
+            num_node_types=int(cfg.model.get("num_node_types", 4)),
+            pool_hidden_dim=_optional_int(cfg, "pool_hidden_dim"),
         )
     )
 
@@ -82,9 +99,9 @@ def main(cfg: DictConfig) -> None:
         grad_clip=float(cfg.train.grad_clip),
         log_every=int(cfg.train.log_every),
         out_dir=run_dir,
+        early_stop_patience=int(cfg.train.get("early_stop_patience", 0)),
     )
 
-    # quick test
     from gtp_cp.train.engine import evaluate
 
     metrics = evaluate(model.to(device), test_loader, device)
@@ -96,9 +113,3 @@ def main(cfg: DictConfig) -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-

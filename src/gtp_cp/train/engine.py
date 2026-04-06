@@ -60,6 +60,7 @@ def fit(
     grad_clip: float,
     log_every: int,
     out_dir: Path,
+    early_stop_patience: int = 0,
 ) -> FitResult:
     console = Console()
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -69,6 +70,7 @@ def fit(
     opt = AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
 
     best_val = -1.0
+    stale = 0
 
     for epoch in range(1, epochs + 1):
         model.train()
@@ -94,6 +96,7 @@ def fit(
         )
         if val["cindex"] > best_val:
             best_val = float(val["cindex"])
+            stale = 0
             torch.save(
                 {
                     "model_state": model.state_dict(),
@@ -101,11 +104,10 @@ def fit(
                 },
                 ckpt_path,
             )
+        else:
+            stale += 1
+            if early_stop_patience > 0 and stale >= early_stop_patience:
+                console.log(f"early_stop epoch={epoch} patience={early_stop_patience}")
+                break
 
     return FitResult(best_val_cindex=best_val, best_checkpoint=ckpt_path)
-
-
-
-
-
-

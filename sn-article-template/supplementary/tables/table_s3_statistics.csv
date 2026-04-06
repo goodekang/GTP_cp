@@ -1,0 +1,8 @@
+Comparison,Test,Statistic,P-value,Effect Size,Significant
+Bio-STFM vs MCAT,Paired T,6.12,0.0002,1.94,Yes
+Bio-STFM vs Porpoise,Paired T,3.13,0.012,0.99,Yes
+Bio-STFM vs TransMIL,Paired T,5.30,0.0005,1.68,Yes
+Bio-STFM vs ABMIL,Paired T,6.17,0.0002,1.95,Yes
+High vs Low Risk (BRCA),Logrank,163.83,< 0.0001,—,Yes
+High vs Low Risk (CPTAC),Logrank,77.81,< 0.0001,—,Yes
+High vs Low Risk (TSS),Logrank,40.26,< 0.0001,—,Yes

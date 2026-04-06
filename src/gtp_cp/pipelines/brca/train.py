@@ -114,6 +114,7 @@ def main(argv: list[str] | None = None) -> None:
         grad_clip=1.0,
         log_every=10,
         out_dir=out_dir,
+        early_stop_patience=0,
     )
 
     metrics = evaluate(model.to(device), test_iter, device)

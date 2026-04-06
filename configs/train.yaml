@@ -16,7 +16,10 @@ graph:
   n_cell_per_patch: 8
   n_gene_per_cell: 32
   feature_dim: 64
-  patch_radius: 1  # synthetic adjacency
+  patch_radius: 1
+  n_motif: 0
+  use_gene_ppi: false
+  ppi_edges_per_graph: 32
 
 model:
   hidden_dim: 128
@@ -25,6 +28,12 @@ model:
   dropout: 0.1
   use_causal_mask: true
   causal_mask_strength: 1.0
+  use_dual_stream: false
+  use_mil_pooling: true
+  num_node_types: 4
+  patch_dim: null
+  gene_dim: null
+  pool_hidden_dim: null
 
 train:
   lr: 3.0e-4
@@ -32,12 +41,7 @@ train:
   epochs: 20
   grad_clip: 1.0
   log_every: 20
+  early_stop_patience: 0
 
 output:
   dir: "artifacts"
-
-
-
-
-
-

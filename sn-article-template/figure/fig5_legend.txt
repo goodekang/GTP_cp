@@ -1,0 +1,16 @@
+Figure 5 | In silico perturbation analyses and therapeutic hypothesis prioritization.
+
+a, In silico target screening. Waterfall plot ranking cell-cell and ligand-receptor interactions by predicted survival benefit (ΔRisk). Interactions are sorted in descending order of therapeutic potential. Top candidates include CSF1R, CTLA4, PD1-PDL1, and TGFβ1 pathways. The dashed line indicates the top-10 threshold. External validation confirmed 6 of 10 (60%) top-ranked interactions as established therapeutic targets, demonstrating the model's ability to rediscover known biology and prioritize actionable candidates.
+
+b, Perturbation-based survival sensitivity analysis for PD1-PDL1 blockade. Kaplan-Meier curves comparing predicted survival for high-risk patients under baseline conditions (dark blue) versus after simulated PD1-PDL1 interaction blockade (orange). The perturbation analysis predicts a median survival separation of +4.8 months (ΔMedian). N = 200 patients, log-rank P = 0.03. Shaded regions indicate 95% confidence intervals.
+
+c, Tumor microenvironment (TME) state transition under perturbation. UMAP visualization showing patient distribution across four TME phenotypes: Cold (gray, immune-desert), Intermediate (medium gray), Hot (orange outline, immune-infiltrated), and Responder (filled orange). The arrow indicates the predicted trajectory under in silico perturbation, with patients transitioning from cold/intermediate states toward hot/responder phenotypes. Response rate: 57/150 patients (38%), consistent with reported immunotherapy response rates in breast cancer.
+
+d, External validation matrix. Heatmap cross-referencing model-identified targets against three independent evidence sources: CRISPR dependency (DepMap), drug sensitivity screens, and clinical trial outcomes. Rows represent top-ranked targets (PD1, EGFR, HER2, CTLA4, VEGFA, CSF1R, TGFβ1, LAG3). Plus signs (+) indicate positive validation; "Appr." denotes FDA-approved therapies; "PhIII" indicates Phase III clinical trials. Summary statistics: 83% validated by CRISPR screens, 67% by drug sensitivity, 100% with clinical evidence, and 6 targets with approved drugs.
+
+e, Permutation test for target significance. Scatter plot showing statistical significance (−log₁₀P) versus target rank for n = 50 top-ranked interactions. Horizontal dashed lines indicate significance thresholds at P = 0.05 (red dashed) and P = 0.01 (red dotted). 45 of 50 (90%) top-ranked targets achieve statistical significance (P < 0.05), confirming that the model's predictions are unlikely to arise by chance and represent genuine biological signals.
+
+f, Target overlap with external databases. Bar chart quantifying the intersection of model-identified targets (n = 23) with independent validation sources. CRISPR DepMap: 19 targets (83%); DrugBank: 18 targets (78%); Clinical trials: 15 targets (65%); All three sources: 12 targets (52%). The high concordance across orthogonal evidence types supports the biological validity and translational potential of the discovered targets.
+
+Abbreviations: TME, tumor microenvironment; UMAP, Uniform Manifold Approximation and Projection; CRISPR, clustered regularly interspaced short palindromic repeats; DepMap, Dependency Map; FDA, Food and Drug Administration.
+

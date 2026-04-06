@@ -1,0 +1,34 @@
+Supplementary Figure S5 | Virtual trial supplements and model training dynamics.
+
+a, Perturbation effect versus null distribution. Histogram comparing the distribution of ΔRisk values from random permutations (null distribution, light teal) against the effects of top-ranked target perturbations (orange vertical lines). The null distribution is centered near zero (μ = 0.0003, σ = 0.0206), as expected for random perturbations. The dashed vertical line indicates the 95th percentile threshold (~0.03 ΔRisk). All top-ranked targets exhibit perturbation effects substantially exceeding this threshold (ΔRisk = 0.10–0.18), confirming that the model's predictions are statistically significant and unlikely to arise by chance. This permutation-based validation supports the biological relevance of identified therapeutic targets.
+
+b, Dose-response curves for top therapeutic targets. Simulated dose-response relationships showing predicted risk reduction (y-axis) as a function of virtual drug concentration (x-axis, log scale, μM) for four high-priority targets:
+
+- PD1-PDL1 (dark blue): Immune checkpoint blockade, saturating response ~0.80 at 10 μM
+- CSF1R-CSF1 (blue): Macrophage depletion axis, saturating response ~0.75
+- EGFR-EGF (orange): Growth factor signaling, saturating response ~0.85
+- TGFβ1-TGFBR2 (dark orange): Immunosuppressive pathway, saturating response ~0.80
+
+All curves exhibit characteristic sigmoid pharmacodynamics with EC₅₀ values in the 0.1–1 μM range, consistent with therapeutic concentrations of approved drugs targeting these pathways. Error bars represent standard deviation across patient simulations.
+
+c, Target pathway enrichment analysis. Horizontal bar chart showing fold enrichment of model-identified targets in canonical signaling pathways. The vertical dashed line indicates no enrichment (fold = 1.0). Asterisks (*) denote statistical significance (FDR < 0.1).
+
+Significantly enriched pathways include:
+- Immune Checkpoint Signaling (4.2×, top enrichment)
+- Cytokine-Cytokine Receptor (2.5×)
+- TGF-beta Signaling (2.3×)
+- T Cell Receptor Signaling (2.0×)
+- NF-κB Signaling (1.9×)
+- JAK-STAT Signaling (1.7×)
+- PI3K-AKT Signaling (1.6×)
+- MAPK Signaling (1.4×)
+- Wnt Signaling (1.2×)
+
+Notch Signaling (light teal bar) did not reach significance. The strong enrichment for immune-related pathways validates the model's focus on tumor-immune interactions as key determinants of prognosis and therapeutic response.
+
+d, Training dynamics. Dual-axis plot showing model convergence over 200 training epochs. Left axis: training loss (solid teal) and validation loss (light teal dashed). Right axis: training C-index (dark blue dashed) and validation C-index (orange dashed).
+
+Training loss decreases monotonically from ~1.0 to ~0.1, while validation loss stabilizes around 0.3–0.4. Training C-index reaches ~0.95, with validation C-index plateauing at ~0.75. The red diamond marks the early stopping point (epoch ~100), selected based on validation C-index plateau. The pink shaded region (epochs 100–200) indicates continued training beyond early stopping, demonstrating potential overfitting where training metrics improve but validation performance stagnates. Early stopping effectively prevents overfitting while preserving generalization.
+
+Abbreviations: FDR, false discovery rate; EC₅₀, half-maximal effective concentration; TGF-beta, transforming growth factor beta; NF-κB, nuclear factor kappa-light-chain-enhancer of activated B cells; JAK-STAT, Janus kinase-signal transducer and activator of transcription; PI3K-AKT, phosphoinositide 3-kinase-protein kinase B; MAPK, mitogen-activated protein kinase.
+

@@ -1,0 +1,67 @@
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figure/fig1_concept.pdf}
+\caption{\textbf{Bio-STFM: A multimodal framework for bridging spatial transcriptomics and histopathology with biological constraints.}
+\textbf{a}, Overall architecture of Bio-STFM. Whole slide images (WSIs) are tessellated into 256$\times$256 pixel patches and encoded via a pretrained vision encoder ($\phi_H$; ViT-H/14 with CONCH weights) to obtain patch-level embeddings. Paired single-cell or bulk RNA-seq data is processed through Geneformer ($\phi_G$) to generate genomic embeddings. These modalities are integrated via a knowledge-guided co-attention mechanism, where the attention matrix is constrained by a biological mask derived from prior protein--protein interaction (PPI) networks.
+\textbf{b}, The data paradox and domain gap in computational pathology. High-quality spatially-resolved molecular profiling (e.g., HTAN) provides rich biological depth but limited sample sizes, whereas large-scale clinical cohorts (e.g., TCGA H\&E slides) offer statistical power but lack molecular resolution.
+\textbf{c}, Multi-scale graph construction spanning three hierarchical levels: L0 (Gene Network), L1 (Cell Communities), and L2 (Tissue Motif).
+\textbf{d}, In silico perturbation analysis by computing $\Delta$Risk = $f(G) - f(G')$ between baseline and perturbed graphs.}
+\label{fig1}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figure/fig2_architecture.pdf}
+\caption{\textbf{Technical architecture of the knowledge-guided masked attention mechanism and hierarchical graph representation.}
+\textbf{a}, Knowledge-guided masked attention mechanism. Node feature matrix $H$ is projected into query (Q), key (K), and value (V) representations. The raw attention scores are combined with a knowledge mask $M$ derived from the Reactome/PPI knowledge base, effectively zeroing out attention weights for biologically unsupported interactions.
+\textbf{b}, Hierarchical graph definition. The tissue microenvironment is modeled as a three-level hierarchical graph: Gene Layer (L0), Cell Layer (L1), and Tissue Layer (L2).
+\textbf{c}, In silico perturbation analysis quantifying sensitivity of specific interactions by comparing baseline and perturbed predictions.}
+\label{fig2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figure/fig3_benchmark.pdf}
+\caption{\textbf{Comprehensive benchmarking of Bio-STFM across multiple evaluation dimensions.}
+\textbf{a}, Pan-cancer survival prediction performance comparing C-index across 10 cancer types on held-out test sets (20\% of each cohort). Error bars represent standard deviation (s.d.) across cancer types.
+\textbf{b}, Survival analysis on TCGA-BRCA cohort with Kaplan-Meier curves (HR = 3.14, $P < 0.0001$). Shaded regions indicate 95\% confidence intervals.
+\textbf{c}, External validation on independent hospital cohorts (CPTAC-BRCA, n = 122; TCGA-TSS, n = 285).
+\textbf{d}, Spatial gene expression prediction (median $R^2$ = 0.58 across 250 highly variable genes; IQR: 0.42--0.71).
+\textbf{e}, Ablation study quantifying component contributions. Error bars represent s.d. across 5-fold cross-validation.
+\textbf{f}, Computational efficiency analysis on NVIDIA RTX 4090 GPU (24GB VRAM) using PyTorch 2.0 and PyTorch Geometric 2.3. Gray shaded region indicates typical WSI graph size range.
+\textbf{g}, Subgroup analysis across clinical covariates. Forest plot shows hazard ratios with 95\% confidence intervals.
+\textbf{h}, Cross-validation performance comparison across six cancer types (C-index = 0.76 $\pm$ 0.04, mean $\pm$ s.d.). Statistical significance: *$P < 0.05$, **$P < 0.01$, ***$P < 0.001$, Bonferroni-corrected paired $t$-tests vs. Bio-STFM.}
+\label{fig3}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figure/fig4_mechanism.pdf}
+\caption{\textbf{Mechanistic interpretation of spatial features driving survival prediction.}
+\textbf{a}, Whole slide image (WSI) attention map showing regions receiving higher attention during risk prediction.
+\textbf{b}, Perturbation stability analysis demonstrating robust interpretations.
+\textbf{c}, Cell community structure in a representative high-risk region.
+\textbf{d}, Attention entropy comparison across model variants ($P < 0.001$).
+\textbf{e}, Attention entropy across transformer layers.
+\textbf{f}, Immune exclusion barrier motif associated with poor prognosis (HR = 2.15, $P$ = 0.001).
+\textbf{g}, Motif-survival association ($P < 0.0001$).
+\textbf{h}, Gene-morphology correlation analysis.}
+\label{fig4}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figure/fig5_virtual_trial.pdf}
+\caption{\textbf{In silico perturbation analyses and therapeutic hypothesis prioritization.}
+\textbf{a}, In silico target screening ranking interactions by predicted survival benefit ($\Delta$Risk).
+\textbf{b}, Perturbation-based survival sensitivity analysis for PD1-PDL1 blockade showing +4.8 months median separation ($P$ = 0.03).
+\textbf{c}, Tumor microenvironment (TME) state transition upon virtual treatment with 38\% response rate.
+\textbf{d}, External validation matrix cross-referencing model-identified targets against CRISPR dependency, drug sensitivity, and clinical trial outcomes (83\% validated by CRISPR screens).
+\textbf{e}, Permutation test for target significance (90\% achieve $P < 0.05$).
+\textbf{f}, Target overlap with external databases showing convergent validation across orthogonal evidence types.}
+\label{fig5}
+\end{figure}

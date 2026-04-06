@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}Supplementary Tables}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Supplementary Table S1: Dataset Demographics}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Supplementary Table S2: Cross-Validation Results}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Supplementary Table S3: Statistical Tests Summary}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Supplementary Table S4: External Validation of Predicted Targets}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Supplementary Figures}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Supplementary Figure S1: Data Quality Control and Graph Construction}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Supplementary Figure S2: Hyperparameter Optimization}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Supplementary Figure S3: Pan-cancer Detailed Analysis}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Supplementary Figure S4: Spatial Mechanism Supplements}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Supplementary Figure S5: Virtual Trial Supplements}{11}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Supplementary Figure S6: Training Curves and Convergence Analysis}{12}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Supplementary Methods}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data Preprocessing Pipeline}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Dataset splitting and leakage prevention}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Whole Slide Image Processing}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Spatial Transcriptomics Processing}{13}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Model Architecture Details}{14}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Dual-Stream Encoder}{14}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Graph Transformer Layers}{14}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Risk Prediction Head}{14}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Training Configuration}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Evaluation Metrics}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Concordance Index (C-index)}{15}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Hazard Ratio}{15}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Attention Entropy}{15}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Computational Resources}{15}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Supplementary References}{16}{section.4}%
